@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <FileUpgradeFlags>40</FileUpgradeFlags>
-    <UpgradeBackupLocation>X:\Repos\EveryGamePlayed\EveryGamePlayed.GameDatabase\Backup1\</UpgradeBackupLocation>
+    <UpgradeBackupLocation>X:\Repos\EveryGamePlayed\EveryGamePlayed.GameDatabase\Backup\src\Models\</UpgradeBackupLocation>
     <OldToolsVersion>Current</OldToolsVersion>
   </PropertyGroup>
   <ItemGroup>

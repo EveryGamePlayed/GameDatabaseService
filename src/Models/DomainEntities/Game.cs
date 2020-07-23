@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.Design.Serialization;
 using System.Diagnostics.Contracts;
 using System.Runtime.InteropServices;
 
@@ -20,6 +21,10 @@ namespace Models.DomainEntities
         public string Description { get; set; }
 
         public DateTime ReleaseDate { get; set; }
+        
+        public int CommunityRating { get; set; }
+        
+        public List<Image> Images { get; set; }
 
         public int PlatformId { get; set; }
 
@@ -34,5 +39,9 @@ namespace Models.DomainEntities
         public int DeveloperId { get; set; }
 
         public Developer Developer { get; set; }
+        
+        public int SeriesId { get; set; }
+        
+        public Series Series { get; set; }
     }
 }
