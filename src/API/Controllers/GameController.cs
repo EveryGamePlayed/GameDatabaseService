@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using API.DTOs;
 using DataAccess.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -24,14 +26,28 @@ namespace API.Controllers
         /// <param name="id">Id of the game to retrieve</param>
         /// <returns>Details of the specified game</returns>
         [HttpGet("{id}")]
-        public async Task<ActionResult<GameDto>> GetGameById(int id)
+        public async Task<ActionResult<GameDto>> GetGameByIdAsync(int id)
         {
-            var game = await _gameQueryService.GetGameById(id);
+            var game = await _gameQueryService.GetGameByIdAsync(id);
             if (game == null)
             {
                 return NotFound();
             }
             return Ok(new GameDto(game));
+        }
+
+        /// <summary>
+        /// Gets Games Alphabetically with Limits for infinite scroll/pagination
+        /// </summary>
+        /// <param name="start">Start of the selection</param>
+        /// <param name="end">End of the selection</param>
+        /// <returns>List of Game information</returns>
+        [HttpGet]
+        public async Task<ActionResult<List<GameDto>>> GetGamesAlphabeticallyAsync(int start, int end)
+        {
+            var games = await _gameQueryService.GetGamesAlphabeticallyAsync(start, end);
+            var list = games.Select(game => new GameDto(game)).ToList();
+            return Ok(list);
         }
     }
 }
