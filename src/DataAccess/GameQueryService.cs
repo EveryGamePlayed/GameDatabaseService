@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DataAccess.Interfaces;
@@ -23,5 +22,9 @@ namespace DataAccess
         public async Task<List<Game>> GetGamesAlphabeticallyAsync(int start, int end) => await _context.Games
             .OrderBy(x => string.IsNullOrWhiteSpace(x.SortTitle) ? x.Title : x.SortTitle).Skip(start).Take(end)
             .ToListAsync();
+
+        public async Task<List<Game>> GetGamesFromSearchString(string searchString) => await _context.Games
+            .Where(g => EF.Functions.Like(g.Title, $"%{searchString}%")).ToListAsync();
+
     }
 }

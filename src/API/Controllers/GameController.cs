@@ -49,5 +49,13 @@ namespace API.Controllers
             var list = games.Select(game => new GameDto(game)).ToList();
             return Ok(list);
         }
+
+        [HttpGet]
+        public async Task<ActionResult<List<GameDto>>> GetGameBySearchString(string searchString)
+        {
+            var games = await _gameQueryService.GetGamesFromSearchString(searchString);
+            var list = games.Select(game => new GameDto(game)).ToList();
+            return Ok(list);
+        }
     }
 }
