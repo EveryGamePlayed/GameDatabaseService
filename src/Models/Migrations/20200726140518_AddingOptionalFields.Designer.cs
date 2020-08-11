@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Models;
 
 namespace Models.Migrations
 {
     [DbContext(typeof(GameDbContext))]
-    partial class GameDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200726140518_AddingOptionalFields")]
+    partial class AddingOptionalFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,6 +56,9 @@ namespace Models.Migrations
                     b.Property<int?>("DeveloperId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("GameId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("PlatformId")
                         .HasColumnType("int");
 
@@ -76,6 +81,8 @@ namespace Models.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("DeveloperId");
+
+                    b.HasIndex("GameId");
 
                     b.HasIndex("PlatformId");
 
@@ -207,6 +214,10 @@ namespace Models.Migrations
                     b.HasOne("Models.DomainEntities.Developer", "Developer")
                         .WithMany()
                         .HasForeignKey("DeveloperId");
+
+                    b.HasOne("Models.DomainEntities.Game", null)
+                        .WithMany("Ports")
+                        .HasForeignKey("GameId");
 
                     b.HasOne("Models.DomainEntities.Platform", "Platform")
                         .WithMany("Games")

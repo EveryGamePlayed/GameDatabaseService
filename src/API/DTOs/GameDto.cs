@@ -14,7 +14,7 @@ namespace API.DTOs
 
         public string Description { get; set; }
 
-        public DateTime ReleaseDate { get; set; }
+        public DateTime? ReleaseDate { get; set; }
 
         public PlatformDto Platform { get; set; }
 

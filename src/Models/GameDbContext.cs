@@ -24,6 +24,7 @@ namespace Models
                 .HasOne(gaGe => gaGe.Genre)
                 .WithMany(g => g.GameGenres)
                 .HasForeignKey(gaGe => gaGe.GenreId);
+
         }
 
 
