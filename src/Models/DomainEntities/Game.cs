@@ -45,9 +45,5 @@ namespace Models.DomainEntities
         public int SeriesId { get; set; }
         
         public Series Series { get; set; }
-
-        public int Version { get; set; }
-
-        public bool Approved { get; set; }
     }
 }

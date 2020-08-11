@@ -17,9 +17,5 @@ namespace Models.DomainEntities
         public string Description { get; set; }
 
         public List<GameGenre> GameGenres { get; set; }
-
-        public int Version { get; set; }
-
-        public bool Approved { get; set; }
     }
 }
