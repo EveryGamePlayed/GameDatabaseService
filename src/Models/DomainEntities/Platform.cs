@@ -21,5 +21,9 @@ namespace Models.DomainEntities
         public string Description { get; set; }
 
         public List<Game> Games { get; set; }
+
+        public int Version { get; set; }
+
+        public bool Approved { get; set; }
     }
 }

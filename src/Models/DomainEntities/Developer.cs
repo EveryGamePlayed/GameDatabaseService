@@ -14,5 +14,9 @@ namespace Models.DomainEntities
         public string Name { get; set; }
 
         public string Description { get; set; }
+
+        public int Version { get; set; }
+
+        public bool Approved { get; set; }
     }
 }
