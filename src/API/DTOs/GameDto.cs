@@ -16,7 +16,7 @@ namespace API.DTOs
 
         public DateTime? ReleaseDate { get; set; }
 
-        public PlatformDto Platform { get; set; }
+        public List<PlatformDto> Platforms { get; set; }
 
         public PublisherDto Publisher { get; set; }
 
@@ -31,12 +31,16 @@ namespace API.DTOs
             Title = game.Title;
             Description = game.Description;
             ReleaseDate = game.ReleaseDate;
-            Platform = new PlatformDto(game.Platform);
+            
             Publisher = new PublisherDto(game.Publisher);
             Developer = new DeveloperDto(game.Developer);
             foreach (var genre in game.GameGenres)
             {
                 Genres.Add(new GenreDto(genre.Genre));
+            }
+            foreach (var platform in game.GamePlatforms)
+            {
+                Platforms.Add(new PlatformDto(platform.Platform));
             }
         }
     }

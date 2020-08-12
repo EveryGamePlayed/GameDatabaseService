@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using API.DTOs;
-using DataAccess.Interfaces;
+using DataAccess.QueryServices.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers

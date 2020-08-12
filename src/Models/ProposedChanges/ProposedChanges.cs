@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Models.Enums;
 
 namespace Models.ProposedChanges
 {
@@ -10,7 +11,7 @@ namespace Models.ProposedChanges
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        public string ChangeType { get; set; }
+        public ChangeType ChangeType { get; set; }
 
         public string ProposedDataChanges { get; set; }
 

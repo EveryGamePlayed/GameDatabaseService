@@ -24,6 +24,18 @@ namespace Models
                 .WithMany(g => g.GameGenres)
                 .HasForeignKey(gaGe => gaGe.GenreId);
 
+            modelBuilder.Entity<GamePlatform>().HasKey(t => new { t.GameId, t.PlatformId });
+
+            modelBuilder.Entity<GamePlatform>()
+                .HasOne(gaGe => gaGe.Game)
+                .WithMany(g => g.GamePlatforms)
+                .HasForeignKey(gaGe => gaGe.GameId);
+
+            modelBuilder.Entity<GamePlatform>()
+                .HasOne(gaGe => gaGe.Platform)
+                .WithMany(g => g.GamesPlatforms)
+                .HasForeignKey(gaGe => gaGe.PlatformId);
+
         }
 
 

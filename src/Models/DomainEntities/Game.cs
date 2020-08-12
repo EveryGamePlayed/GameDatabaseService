@@ -27,10 +27,8 @@ namespace Models.DomainEntities
         public int CommunityRating { get; set; }
         
         public List<Photos> Images { get; set; }
-
-        public int PlatformId { get; set; }
-
-        public Platform Platform { get; set; }
+        
+        public List<GamePlatform> GamePlatforms { get; set; }
 
         public List<GameGenre> GameGenres { get; set; }
 
@@ -45,5 +43,7 @@ namespace Models.DomainEntities
         public int SeriesId { get; set; }
         
         public Series Series { get; set; }
+
+        public int SeriesOrder { get; set; }
     }
 }

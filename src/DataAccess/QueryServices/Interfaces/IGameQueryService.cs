@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Models.DomainEntities;
 
-namespace DataAccess.Interfaces
+namespace DataAccess.QueryServices.Interfaces
 {
     public interface IGameQueryService
     {

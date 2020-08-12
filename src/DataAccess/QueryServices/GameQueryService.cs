@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DataAccess.Interfaces;
+using DataAccess.QueryServices.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Models;
 using Models.DomainEntities;
 
-namespace DataAccess
+namespace DataAccess.QueryServices
 {
     public class GameQueryService : IGameQueryService
     {
