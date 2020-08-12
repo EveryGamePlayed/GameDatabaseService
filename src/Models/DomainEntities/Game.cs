@@ -26,7 +26,7 @@ namespace Models.DomainEntities
         
         public int CommunityRating { get; set; }
         
-        public List<Image> Images { get; set; }
+        public List<Photos> Images { get; set; }
 
         public int PlatformId { get; set; }
 

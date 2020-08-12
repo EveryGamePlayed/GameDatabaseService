@@ -1,5 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Models.DomainEntities;
 
 namespace Models
@@ -29,8 +28,8 @@ namespace Models
 
 
         #region DbSets
-        
-        
+
+        #region ApprovedEntities
         public DbSet<Game> Games { get; set; }
         public DbSet<Platform> Platforms { get; set; }
         public DbSet<Developer> Developers { get; set; }
@@ -38,6 +37,14 @@ namespace Models
         public DbSet<Genre> Genres { get; set; }
         public DbSet<GameGenre> GameGenres { get; set; }
         public DbSet<Series> Series { get; set; }
+        public DbSet<Photos> Photos { get; set; }
+        #endregion
+
+        #region ProposedEntities
+
+        public DbSet<ProposedChanges.ProposedChanges> ProposedChanges { get; set; }
+
+        #endregion
 
         #endregion
     }

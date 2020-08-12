@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Models.Enums;
 
 namespace Models.DomainEntities
 {
-    public class Image
+    public class Photos
     {
         [Key]
         [Required]
@@ -12,6 +13,6 @@ namespace Models.DomainEntities
 
         public string Url { get; set; }
 
-        public string Type { get; set; }
+        public PhotoType Type { get; set; }
     }
 }
